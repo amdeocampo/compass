@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170919 14:53:43.801" generator="Robot 3.0.2 (Python 2.7.12 on win32)">
+<suite source="c:\Olelo\Automation\Frontend\suite_sanity" id="s1" name="Suite Sanity">
+<suite source="c:\Olelo\Automation\Frontend\suite_sanity\003__navigate_menu.robot" id="s1-s1" name="Navigate Menu">
+<test id="s1-s1-t1" name="Verify and navigate menus">
+<kw name="When compass page is opened" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${server}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20170919 14:53:45.209" level="INFO">Opening browser 'firefox' to base url 'http://compass-staging.eu-west-1.elasticbeanstalk.com'</msg>
+<status status="PASS" endtime="20170919 14:54:06.341" starttime="20170919 14:53:45.209"></status>
+</kw>
+<kw name="compass logo is displayed" library="resource">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${COMPASS_LOGO}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.342" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(., 'Compass')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.387" starttime="20170919 14:54:06.341"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.387" starttime="20170919 14:54:06.341"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.387" starttime="20170919 14:53:45.208"></status>
+</kw>
+<kw name="Then specific menu module is displayed" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.388" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.406" starttime="20170919 14:54:06.388"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.407" starttime="20170919 14:54:06.388"></status>
+</kw>
+<kw name="And specific menu module is displayed" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.408" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.426" starttime="20170919 14:54:06.408"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.427" starttime="20170919 14:54:06.407"></status>
+</kw>
+<kw name="Given specific menu is clicked" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.428" level="INFO">Clicking element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Listening')]'.</msg>
+<status status="PASS" endtime="20170919 14:54:06.672" starttime="20170919 14:54:06.428"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.672" starttime="20170919 14:54:06.427"></status>
+</kw>
+<kw name="When specific menu is active" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'${menu_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:06.673" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Listening')]</msg>
+<status status="PASS" endtime="20170919 14:54:06.673" starttime="20170919 14:54:06.673"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.673" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.690" starttime="20170919 14:54:06.673"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.690" starttime="20170919 14:54:06.672"></status>
+</kw>
+<kw name="Then specific page is displayed" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'${page_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:06.691" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Listening')]</msg>
+<status status="PASS" endtime="20170919 14:54:06.691" starttime="20170919 14:54:06.691"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.691" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.711" starttime="20170919 14:54:06.691"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.711" starttime="20170919 14:54:06.690"></status>
+</kw>
+<kw name="Given specific menu is clicked" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.713" level="INFO">Clicking element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Overview')]'.</msg>
+<status status="PASS" endtime="20170919 14:54:06.965" starttime="20170919 14:54:06.712"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.965" starttime="20170919 14:54:06.712"></status>
+</kw>
+<kw name="When specific menu is active" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'${menu_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:06.966" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Overview')]</msg>
+<status status="PASS" endtime="20170919 14:54:06.966" starttime="20170919 14:54:06.966"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.967" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:06.984" starttime="20170919 14:54:06.967"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:06.984" starttime="20170919 14:54:06.966"></status>
+</kw>
+<kw name="Then specific page is displayed" library="resource">
+<arguments>
+<arg>Account Overview</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'${page_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:06.985" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Account Overview')]</msg>
+<status status="PASS" endtime="20170919 14:54:06.985" starttime="20170919 14:54:06.985"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:06.986" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Account Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:07.003" starttime="20170919 14:54:06.986"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:07.003" starttime="20170919 14:54:06.985"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170919 14:54:07.456" starttime="20170919 14:54:07.003"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:07.456" critical="yes" starttime="20170919 14:53:45.207"></status>
+</test>
+<doc>Sanity test for Listening module</doc>
+<status status="PASS" endtime="20170919 14:54:07.457" starttime="20170919 14:53:43.915"></status>
+</suite>
+<suite source="c:\Olelo\Automation\Frontend\suite_sanity\004__overview.robot" id="s1-s2" name="Overview">
+<test id="s1-s2-t1" name="Verify Overview module page objects">
+<kw name="Given compass page is opened" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${server}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:07.465" level="INFO">Opening browser 'firefox' to base url 'http://compass-staging.eu-west-1.elasticbeanstalk.com'</msg>
+<status status="PASS" endtime="20170919 14:54:25.735" starttime="20170919 14:54:07.465"></status>
+</kw>
+<kw name="compass logo is displayed" library="resource">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${COMPASS_LOGO}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:25.736" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(., 'Compass')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:25.781" starttime="20170919 14:54:25.735"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:25.781" starttime="20170919 14:54:25.735"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:25.781" starttime="20170919 14:54:07.465"></status>
+</kw>
+<kw name="When specific menu module is displayed" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:25.782" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:25.800" starttime="20170919 14:54:25.782"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:25.800" starttime="20170919 14:54:25.782"></status>
+</kw>
+<kw name="Then specific menu is clicked" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:25.801" level="INFO">Clicking element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Overview')]'.</msg>
+<status status="PASS" endtime="20170919 14:54:26.058" starttime="20170919 14:54:25.801"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.058" starttime="20170919 14:54:25.801"></status>
+</kw>
+<kw name="Given specific menu is active" library="resource">
+<arguments>
+<arg>Overview</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'${menu_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.060" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Overview')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.060" starttime="20170919 14:54:26.059"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.060" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.083" starttime="20170919 14:54:26.060"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.083" starttime="20170919 14:54:26.058"></status>
+</kw>
+<kw name="When specific page is displayed" library="resource">
+<arguments>
+<arg>Account Overview</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'${page_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.085" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Account Overview')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.085" starttime="20170919 14:54:26.084"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.085" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Account Overview')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.104" starttime="20170919 14:54:26.085"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.105" starttime="20170919 14:54:26.083"></status>
+</kw>
+<kw name="And linked pages dropdown is displayed" library="resource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_LINKEDPAGES_DROPDOWN}</arg>
+<arg>timeout=2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 14:54:26.127" starttime="20170919 14:54:26.106"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_LINKEDPAGES_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.129" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//ul[@class='nav navbar-nav']/li[@class='dropdown'] /a[i/@class = 'fa fa-user']' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.156" starttime="20170919 14:54:26.128"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.156" starttime="20170919 14:54:26.105"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Total Followers</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.158" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Followers')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.158" starttime="20170919 14:54:26.158"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.159" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Followers')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.185" starttime="20170919 14:54:26.158"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.185" starttime="20170919 14:54:26.157"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Total Likes</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.186" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Likes')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.186" starttime="20170919 14:54:26.186"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.186" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Likes')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.205" starttime="20170919 14:54:26.186"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.205" starttime="20170919 14:54:26.185"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Total Posts</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.206" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Posts')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.206" starttime="20170919 14:54:26.206"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.207" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Posts')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.225" starttime="20170919 14:54:26.207"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.225" starttime="20170919 14:54:26.206"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Total Post Engagements</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.226" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Post Engagements')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.226" starttime="20170919 14:54:26.226"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.226" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Total Post Engagements')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.251" starttime="20170919 14:54:26.226"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.251" starttime="20170919 14:54:26.225"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>5 Recent Posts</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.253" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, '5 Recent Posts')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.253" starttime="20170919 14:54:26.253"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.254" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, '5 Recent Posts')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.275" starttime="20170919 14:54:26.253"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.275" starttime="20170919 14:54:26.252"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Most Trending Post</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.277" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Most Trending Post')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.277" starttime="20170919 14:54:26.276"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.277" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Most Trending Post')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.293" starttime="20170919 14:54:26.277"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.294" starttime="20170919 14:54:26.276"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Page Sentiment</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:26.298" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Page Sentiment')]</msg>
+<status status="PASS" endtime="20170919 14:54:26.298" starttime="20170919 14:54:26.297"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.298" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Page Sentiment')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:26.316" starttime="20170919 14:54:26.298"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.316" starttime="20170919 14:54:26.296"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170919 14:54:26.737" starttime="20170919 14:54:26.317"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:26.737" critical="yes" starttime="20170919 14:54:07.464"></status>
+</test>
+<doc>Sanity test for Overview module</doc>
+<status status="PASS" endtime="20170919 14:54:26.738" starttime="20170919 14:54:07.459"></status>
+</suite>
+<suite source="c:\Olelo\Automation\Frontend\suite_sanity\005__listening.robot" id="s1-s3" name="Listening">
+<test id="s1-s3-t1" name="Verify Listening module page objects">
+<kw name="Given compass page is opened" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${server}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:26.747" level="INFO">Opening browser 'firefox' to base url 'http://compass-staging.eu-west-1.elasticbeanstalk.com'</msg>
+<status status="PASS" endtime="20170919 14:54:44.524" starttime="20170919 14:54:26.747"></status>
+</kw>
+<kw name="compass logo is displayed" library="resource">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${COMPASS_LOGO}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:44.525" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(., 'Compass')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:44.570" starttime="20170919 14:54:44.525"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.570" starttime="20170919 14:54:44.524"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.570" starttime="20170919 14:54:26.747"></status>
+</kw>
+<kw name="When specific menu module is displayed" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:44.571" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:44.589" starttime="20170919 14:54:44.571"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.589" starttime="20170919 14:54:44.571"></status>
+</kw>
+<kw name="Then specific menu is clicked" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=*//div[@id='dashboard-page']//a[contains(., '${menu_name}')]</arg>
+</arguments>
+<msg timestamp="20170919 14:54:44.591" level="INFO">Clicking element 'xpath=*//div[@id='dashboard-page']//a[contains(., 'Listening')]'.</msg>
+<status status="PASS" endtime="20170919 14:54:44.839" starttime="20170919 14:54:44.590"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.840" starttime="20170919 14:54:44.590"></status>
+</kw>
+<kw name="Given specific menu is active" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'${menu_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:44.841" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Listening')]</msg>
+<status status="PASS" endtime="20170919 14:54:44.841" starttime="20170919 14:54:44.841"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:44.841" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//li[@class='active']/a[contains(.,'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:44.858" starttime="20170919 14:54:44.841"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.858" starttime="20170919 14:54:44.840"></status>
+</kw>
+<kw name="When specific page is displayed" library="resource">
+<arguments>
+<arg>Listening</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'${page_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:44.859" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Listening')]</msg>
+<status status="PASS" endtime="20170919 14:54:44.859" starttime="20170919 14:54:44.859"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:44.859" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//p[contains(@class, 'navbar-text') and starts-with(.,'Listening')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:44.877" starttime="20170919 14:54:44.859"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:44.877" starttime="20170919 14:54:44.858"></status>
+</kw>
+<kw name="Then linked pages dropdown is displayed" library="resource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_LINKEDPAGES_DROPDOWN}</arg>
+<arg>timeout=2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 14:54:45.311" starttime="20170919 14:54:44.878"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_LINKEDPAGES_DROPDOWN}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.311" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//ul[@class='nav navbar-nav']/li[@class='dropdown'] /a[i/@class = 'fa fa-user']' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.337" starttime="20170919 14:54:45.311"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.337" starttime="20170919 14:54:44.878"></status>
+</kw>
+<kw name="And comments feed sentiment widget is displayed" library="resource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_COMMENTSFEED_SENTIMENT}</arg>
+<arg>timeout=2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 14:54:45.359" starttime="20170919 14:54:45.338"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_COMMENTSFEED_SENTIMENT}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.359" level="INFO">Verifying element 'id=comment-feed-sentiment-widget' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.385" starttime="20170919 14:54:45.359"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.385" starttime="20170919 14:54:45.338"></status>
+</kw>
+<kw name="And comments feed widget is displayed" library="resource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_COMMENTSFEED}</arg>
+<arg>timeout=2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 14:54:45.409" starttime="20170919 14:54:45.386"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${WIDGET_COMMENTSFEED}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.409" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section' and contains(./div, 'Comments Feed')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.442" starttime="20170919 14:54:45.409"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.442" starttime="20170919 14:54:45.386"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Posts Reactions Summary</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:45.449" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Posts Reactions Summary')]</msg>
+<status status="PASS" endtime="20170919 14:54:45.449" starttime="20170919 14:54:45.447"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.449" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Posts Reactions Summary')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.491" starttime="20170919 14:54:45.449"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.491" starttime="20170919 14:54:45.444"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Post Type Engagements</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:45.492" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Post Type Engagements')]</msg>
+<status status="PASS" endtime="20170919 14:54:45.492" starttime="20170919 14:54:45.492"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.492" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Post Type Engagements')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.523" starttime="20170919 14:54:45.492"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.523" starttime="20170919 14:54:45.491"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Top 5 Page Mentions</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:45.524" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top 5 Page Mentions')]</msg>
+<status status="PASS" endtime="20170919 14:54:45.524" starttime="20170919 14:54:45.524"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.525" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top 5 Page Mentions')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.554" starttime="20170919 14:54:45.524"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.556" starttime="20170919 14:54:45.524"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Top 5 Active User Accounts</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:45.558" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top 5 Active User Accounts')]</msg>
+<status status="PASS" endtime="20170919 14:54:45.558" starttime="20170919 14:54:45.558"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.558" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top 5 Active User Accounts')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.588" starttime="20170919 14:54:45.558"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.588" starttime="20170919 14:54:45.557"></status>
+</kw>
+<kw name="And specific widget is displayed" library="resource">
+<arguments>
+<arg>Top Words</arg>
+</arguments>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'</arg>
+<arg>and contains(.//div, '${widget_name}')]</arg>
+</arguments>
+<assign>
+<var>${XPATH_VALUE}</var>
+</assign>
+<msg timestamp="20170919 14:54:45.591" level="INFO">${XPATH_VALUE} = *//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top Words')]</msg>
+<status status="PASS" endtime="20170919 14:54:45.591" starttime="20170919 14:54:45.590"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=${XPATH_VALUE}</arg>
+</arguments>
+<msg timestamp="20170919 14:54:45.592" level="INFO">Verifying element 'xpath=*//div[@id='dashboard-page']//div[@class='panel panel-default panel-section'and contains(.//div, 'Top Words')]' is visible.</msg>
+<status status="PASS" endtime="20170919 14:54:45.622" starttime="20170919 14:54:45.591"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:45.622" starttime="20170919 14:54:45.590"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170919 14:54:46.077" starttime="20170919 14:54:45.623"></status>
+</kw>
+<status status="PASS" endtime="20170919 14:54:46.078" critical="yes" starttime="20170919 14:54:26.746"></status>
+</test>
+<doc>Sanity test for Listening module</doc>
+<status status="PASS" endtime="20170919 14:54:46.079" starttime="20170919 14:54:26.740"></status>
+</suite>
+<status status="PASS" endtime="20170919 14:54:46.081" starttime="20170919 14:53:43.805"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Suite Sanity" pass="3">Suite Sanity</stat>
+<stat fail="0" id="s1-s1" name="Navigate Menu" pass="1">Suite Sanity.Navigate Menu</stat>
+<stat fail="0" id="s1-s2" name="Overview" pass="1">Suite Sanity.Overview</stat>
+<stat fail="0" id="s1-s3" name="Listening" pass="1">Suite Sanity.Listening</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
